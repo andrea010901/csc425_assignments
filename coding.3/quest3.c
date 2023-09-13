@@ -1,16 +1,17 @@
 /*********************************************
-   Your name: Andrea Maria Ola
-   Question 1: The value of the x variable does not change and is the same for the child process.
-   Question 2: The value of the x variable changes accordingly for each, the child and the parent. This is because child and parent have their own copy of the x vairable. 
+   Your name: Andrea Maria Ola Mejicanos 
+   Question 1: The task can be performed without calling wait() in the parent. We can use a for loop or the function sleep(), implmented in the parent process. 
 *********************************************/
 
-#include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
+#include <stdio.h>
+#include <string.h>
+#include <fcntl.h>
+#include <sys/wait.h>
 
 int main(int argc, char *argv[]) {
   printf("hello world (pid:%d)\n", (int) getpid());
-  int x = 100;
   int rc = fork();
   if (rc < 0) {
     // fork failed
@@ -19,15 +20,18 @@ int main(int argc, char *argv[]) {
   } else if (rc == 0) {
     // child (new process)
     printf("hello, I am child (pid:%d)\n", (int) getpid());
-    x = 150;
-    printf("Value of x in child is: %d\n", x);
-  } else {
+  } 
+  else 
+  {
+    
+      //for (int i = 0; i < 1000000; i++)
+      //{
+        //  ;
+      //}
     // parent goes down this path (main)
-    printf("hello, I am parent of %d (pid:%d)\n", rc, (int) getpid());
-    x = 200;
-    printf("Value of x in parent is: %d\n", x);
+    sleep(1);
+    printf("goodbye, I am parent of %d (pid:%d)\n", rc, (int) getpid());
   }
   //printf("Value of x at the end: %d\n", x);
   return 0;
 }
-
