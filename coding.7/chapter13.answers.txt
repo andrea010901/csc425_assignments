@@ -1,0 +1,16 @@
+/*********************************************
+Your name: Andrea Ola Mejicanos 
+Question 2: The amount of memory is 7960 megabytes, and the amount of free memory is 5383. This numbers do match my intuition 
+since I am not currently using all the memory and I know that the RAM of my laptop is 8Gb.
+
+Question 4: The amount of memory used shifted from 776 to 746 after the process was killed. The numbers do match the expectation 
+since the number of megabytes that I used as input was 30.
+
+Question 6: In order to get the PID I added a line of code to memory-user program to print the PID to the screen. Then, while that process was running, I used pmap with that PID.
+
+Question 7: I observed memory-user, heap, stack, vvar, vdso, anon, and vsycall.
+
+Question 8: After running memory-user several times, with different amounts of used memory (10,20,30,100), the output of pmap oly shows a change in [anon] memory,
+ and it increases as the memory used by memory-user changes. I am not certain about why the change happens in anon memory,
+ but it does makes snese since this valu changes based on the amount of memory that we are giving to memory-user.
+*********************************************/
